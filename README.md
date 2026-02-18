@@ -39,11 +39,11 @@ React Dashboard (SSE live updates)
 
 ### Azure Services Used
 
-| Service | Purpose | Cost |
-|---------|---------|------|
-| **Azure OpenAI** | Structured extraction via GPT-5 nano (or GPT-4.1-mini) | Pay-per-token only |
-| **Azure Speech** (optional) | Streaming speech-to-text | Free tier available; optional |
-| **Cosmos DB** (optional) | Serverless state persistence for deployed apps | Pay-per-request; optional |
+| Service                     | Purpose                                                | Cost                          |
+| --------------------------- | ------------------------------------------------------ | ----------------------------- |
+| **Azure OpenAI**            | Structured extraction via GPT-5 nano (or GPT-4.1-mini) | Pay-per-token only            |
+| **Azure Speech** (optional) | Streaming speech-to-text                               | Free tier available; optional |
+| **Cosmos DB** (optional)    | Serverless state persistence for deployed apps         | Pay-per-request; optional     |
 
 ---
 
@@ -87,7 +87,7 @@ docs/             Architecture docs + demo script
 
 ### Prerequisites
 
-- Node.js 20+
+- Node.js 22+
 - An Azure subscription (free tier works)
 
 ### 1. Install
@@ -133,19 +133,19 @@ The app still works: it uses browser speech recognition (Chrome/Edge) and return
 2. Import in Vercel, set **Root Directory** to `web`
 3. Add environment variables (see below)
 
-| Variable | Value |
-|----------|-------|
-| `AZURE_OPENAI_ENDPOINT` | Your Azure OpenAI endpoint |
-| `AZURE_OPENAI_API_KEY` | Your Azure OpenAI key |
-| `AZURE_OPENAI_API_VERSION` | `2025-01-01-preview` |
-| `MODEL_PRIMARY_DEPLOYMENT` | `gpt-5-nano` |
-| `MODEL_FALLBACK_DEPLOYMENT` | `gpt-5-nano` |
-| `COSMOS_ENDPOINT` | Cosmos DB URI (recommended for deployed demo) |
-| `COSMOS_KEY` | Cosmos DB primary key |
-| `COSMOS_DATABASE` | `meeting-copilot` |
-| `COSMOS_CONTAINER` | `meeting-state` |
-| `NEXT_PUBLIC_AZURE_SPEECH_REGION` | `eastus2` |
-| `NEXT_PUBLIC_AZURE_SPEECH_KEY` | Your Azure Speech key |
+| Variable                          | Value                                         |
+| --------------------------------- | --------------------------------------------- |
+| `AZURE_OPENAI_ENDPOINT`           | Your Azure OpenAI endpoint                    |
+| `AZURE_OPENAI_API_KEY`            | Your Azure OpenAI key                         |
+| `AZURE_OPENAI_API_VERSION`        | `2025-01-01-preview`                          |
+| `MODEL_PRIMARY_DEPLOYMENT`        | `gpt-5-nano`                                  |
+| `MODEL_FALLBACK_DEPLOYMENT`       | `gpt-5-nano`                                  |
+| `COSMOS_ENDPOINT`                 | Cosmos DB URI (recommended for deployed demo) |
+| `COSMOS_KEY`                      | Cosmos DB primary key                         |
+| `COSMOS_DATABASE`                 | `meeting-copilot`                             |
+| `COSMOS_CONTAINER`                | `meeting-state`                               |
+| `NEXT_PUBLIC_AZURE_SPEECH_REGION` | `eastus2`                                     |
+| `NEXT_PUBLIC_AZURE_SPEECH_KEY`    | Your Azure Speech key                         |
 
 ### Azure Resources (Bicep IaC)
 
@@ -162,13 +162,13 @@ Then deploy a model in Azure AI Foundry (e.g., `gpt-5-nano`).
 
 ### Cost Estimate
 
-| Resource | Monthly Cost |
-|----------|-------------|
-| Azure OpenAI (GPT-5 nano, light demo use) | ~$0.50-2.00 |
-| Azure Speech (free tier, 5hrs/month) | $0.00 |
-| Cosmos DB serverless (demo use) | ~$0.00-0.50 |
-| Vercel (Pro plan) | Included |
-| **Total** | **< $3/month for demos** |
+| Resource                                  | Monthly Cost             |
+| ----------------------------------------- | ------------------------ |
+| Azure OpenAI (GPT-5 nano, light demo use) | ~$0.50-2.00              |
+| Azure Speech (free tier, 5hrs/month)      | $0.00                    |
+| Cosmos DB serverless (demo use)           | ~$0.00-0.50              |
+| Vercel (Pro plan)                         | Included                 |
+| **Total**                                 | **< $3/month for demos** |
 
 ---
 
@@ -192,6 +192,6 @@ The core `MeetingState` object:
 
 ---
 
-## Resume Bullet
+## Summary
 
 > Built a real-time meeting copilot using Azure OpenAI (GPT-5 nano) for incremental extraction of decisions and action items with evidence, deployed on Vercel with Next.js API routes, Zod-validated schemas, a deterministic merge engine, and Azure IaC (Bicep).
