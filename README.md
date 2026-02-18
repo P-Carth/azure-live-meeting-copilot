@@ -160,16 +160,6 @@ az deployment group create \
 
 Then deploy a model in Azure AI Foundry (e.g., `gpt-5-nano`).
 
-### Cost Estimate
-
-| Resource                                  | Monthly Cost             |
-| ----------------------------------------- | ------------------------ |
-| Azure OpenAI (GPT-5 nano, light demo use) | ~$0.50-2.00              |
-| Azure Speech (free tier, 5hrs/month)      | $0.00                    |
-| Cosmos DB serverless (demo use)           | ~$0.00-0.50              |
-| Vercel (Pro plan)                         | Included                 |
-| **Total**                                 | **< $3/month for demos** |
-
 ---
 
 ## Data Contract
