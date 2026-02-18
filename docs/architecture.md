@@ -80,9 +80,3 @@ FallbackRouter
 |------|--------|----------|
 | **In-memory** (default) | No config needed | Local dev |
 | **Cosmos DB serverless** | Set `COSMOS_ENDPOINT` + `COSMOS_KEY` | Vercel deployment |
-
-## Cost
-
-| Path | Monthly Cost | Best For |
-|------|-------------|----------|
-| **Minimal** (Vercel + Azure OpenAI) | < $3 | Portfolio demos, interviews |
